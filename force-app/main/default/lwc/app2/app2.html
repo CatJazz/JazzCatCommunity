@@ -1,0 +1,100 @@
+<template>
+  <!-- big thank you to author of https://codepen.io/Creativenw/pen/xOZZqx -->
+  <div class="crumbs">
+    <ul>
+      <li><div class="tab-menu welcome-option active"> <p onclick={handleClick} data-tabname="Welcome">Welcome</p></div></li>
+      <li>
+        <div class="tab-menu shopping-option">
+          <p onclick={handleClick} data-tabname="Shopping">
+            Shopping 
+            <template if:true={haveOrder}>
+              <lightning-icon icon-name="utility:success" alternative-text="Cart populated" variant="inverse" title="" size="small" class="slds-visible menu-icon"></lightning-icon>
+            </template>
+            <template if:false={haveOrder}>
+              <lightning-icon icon-name="utility:success" alternative-text="Cart unpopulated" variant="inverse" title="" size="small" class="slds-hidden menu-icon"></lightning-icon>
+            </template>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="tab-menu shipping-option">
+          <p class="slds-p-right_x-large" onclick={handleClick} data-tabname="Shipping">
+            Shipping
+            <template if:true={haveShipping}>
+              <lightning-icon icon-name="utility:success" alternative-text="Shipping fulfilled" variant="inverse" title="" size="small" class="slds-visible menu-icon"></lightning-icon>
+            </template>
+            <template if:false={haveShipping}>
+              <lightning-icon icon-name="utility:success" alternative-text="Shipping unfulfilled" variant="inverse" title="" size="small" class="slds-hidden menu-icon"></lightning-icon>
+            </template>
+          </p> 
+        </div>
+      </li>
+      <li>
+        <div class="tab-menu billing-option"> 
+          <p class="slds-p-right_x-large" onclick={handleClick} data-tabname="Billing" >
+            Billing
+            <template if:true={haveBilling}>
+              <lightning-icon icon-name="utility:success" alternative-text="Billing fulfilled" variant="inverse" title="" size="small" class="slds-visible menu-icon"></lightning-icon>
+            </template>
+            <template if:false={haveBilling}>
+              <lightning-icon icon-name="utility:success" alternative-text="Billing unfulfilled" variant="inverse" title="" size="small" class="slds-hidden menu-icon"></lightning-icon>
+            </template>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="tabs-container">
+    <div class="tabs">
+      <div class="slds-is-absolute welcome tab">
+    <!-- slds-align_absolute-center -->
+        <div class="heading2"> 
+          Welcome to Pawsters
+        </div>  
+        <div class="white-background">
+          <c-cat-carousel2></c-cat-carousel2>
+        </div>
+        <div class="heading2">
+          Welcome to Pawsters
+        </div>  
+      </div>
+
+      <div class="slds-is-absolute shopping tab white-background hide">
+        <c-cat-products-with-cart2></c-cat-products-with-cart2>
+      </div>
+
+      <div class="slds-is-absolute shipping tab white-background hide">
+        <div class="slds-box slds-grid">
+          <div class="slds-col slds-size_6-of-12">
+            <c-addresses2 address-type="Shipping"></c-addresses2>
+          </div>
+          <div class="slds-col slds-size_6-of-12">
+            <c-order-details2></c-order-details2>
+          </div>
+        </div>
+      </div>
+
+      <div class="slds-is-absolute billing tab white-background hide">
+        <div class="slds-box slds-grid">
+          <div class="slds-col slds-size_6-of-12">
+            <c-addresses2 address-type="Billing"></c-addresses2>
+          </div>
+          <div class="slds-col slds-size_6-of-12">
+            <c-payment2></c-payment2> 
+            <div>
+              <template if:false={enableOrderButton}>
+                <button class="order-button-red slds-align_absolute-center" disabled>Place Order</button>
+              </template>
+              <template if:true={enableOrderButton}>
+                <button class="order-button-blue slds-align_absolute-center" onclick={placeOrder}>Place Order</button>
+              </template>
+            </div>
+            <c-order-details2></c-order-details2>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

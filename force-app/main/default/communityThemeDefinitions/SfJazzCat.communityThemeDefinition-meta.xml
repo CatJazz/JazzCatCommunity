@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommunityThemeDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <bundlesInfo>
+        <description>Custom</description>
+        <order>1</order>
+        <title>Custom</title>
+        <type>Highlight</type>
+    </bundlesInfo>
+    <bundlesInfo>
+        <image>siteAsset_52487bb6dc574cb79e580b516cf0fc19</image>
+        <order>1</order>
+        <title>siteAsset_52487bb6dc574cb79e580b516cf0fc19</title>
+        <type>PreviewImage</type>
+    </bundlesInfo>
+    <defaultBrandingSet>SfJazzCat</defaultBrandingSet>
+    <description>Custom</description>
+    <enableExtendedCleanUpOnDelete>true</enableExtendedCleanUpOnDelete>
+    <masterLabel>SfJazzCat</masterLabel>
+    <publisher>JazzCat</publisher>
+    <themeSetting>
+        <themeLayout>SfJazzCat_themeLayout_Login</themeLayout>
+        <themeLayoutType>Login</themeLayoutType>
+    </themeSetting>
+    <themeSetting>
+        <themeLayout>SfJazzCat_themeLayout_Default</themeLayout>
+        <themeLayoutType>Inner</themeLayoutType>
+    </themeSetting>
+</CommunityThemeDefinition>

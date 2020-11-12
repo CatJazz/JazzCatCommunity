@@ -1,0 +1,150 @@
+<template>
+  <div>
+    <div class="slds-box slds-grid">
+      <div class="slds-col slds-size_6-of-12 col">
+        <div class="row">
+          <template if:true={componentData}>
+            <div class="slds-scrollable_y product-list">
+              <table class="slds-table slds-table_bordered product-table">
+                <thead class="table-header">
+                  <tr class="slds-line-height_reset header-row">
+                    <th class="" scope="col">
+                      <div>Available Posters</div>
+                    </th>
+                    <th>
+                      <div>Details</div>
+                    </th>
+                    <th>
+                      <div>Add to cart</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template for:each={componentData} for:item="rec">
+                    <tr key={rec.Id}>
+                      <td>
+                        <template if:true={rec.LwcSmallImageUrl}>
+                          <img src={rec.LwcSmallImageUrl}
+                            class="product-image"
+                            alt={rec.ImageAltText}
+                          >
+                        </template>
+                      </td>
+                      <td>
+                        <div>Name: {rec.Name}</div>
+                        <div>Description: {rec.Description}</div>
+                        <div>Price <lightning-formatted-number value={rec.UnitPrice} format-style="currency" currency-code="USD"></lightning-formatted-number></div>
+                        <div>Starting Inventory <lightning-formatted-number value={rec.StartingInventory}></lightning-formatted-number></div>
+                        <div>Current Inventory <lightning-formatted-number value={rec.CurrentInventory}></lightning-formatted-number></div>
+                      </td>  
+                      <td>
+                        <div class="slds-box slds-grid cell-controls">
+                          <div class="slds-col slds-p-right_medium">
+                            <input type="number" name="quantity-input" placeholder="0" min="0" max={rec.OriginalCurrentInventory} onchange={handleChange} value={rec.OrderQuantity} data-productid={rec.Id}/>
+                          </div>
+                              
+                          <div class="slds-col">
+                            <template if:true={rec.EnableAddButton}>
+                              <lightning-button
+                                variant="brand"
+                                label={rec.ButtonLabel}
+                                icon-position="right"
+                                onclick={handleAddClick}
+                                data-productid={rec.Id}
+                                >
+                              </lightning-button>
+                            </template>
+                            <template if:false={rec.EnableAddButton}>
+                              <lightning-button
+                                variant="brand"
+                                label="Add"
+                                icon-position="right"
+                                onclick={handleAddClick}
+                                data-productid={rec.Id}
+                                disabled>
+                              </lightning-button>
+                            </template>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>      
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </template>
+        </div>
+      </div>
+      <div class="slds-col slds-size_6-of-12 col">
+        <div class="row">
+
+            <div class="slds-scrollable_y cart-list">
+              <table class="slds-table slds-table_bordered cart-table">
+                <thead class="table-header">
+                  <tr class="slds-line-height_reset header-row">
+                    <th class="" scope="col">
+                      <div class="slds-truncate">Item</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate">Details</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate">Action</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template if:true={cartData}>
+                    <template for:each={cartData} for:item="rec">
+                      <tr key={rec.Id}>
+                        <td>
+                          <template if:true={rec.LwcSmallImageUrl}>
+                            <img src={rec.LwcSmallImageUrl}
+                              class="product-image"
+                              alt={rec.ImageAltText}
+                            >
+                          </template>
+                        </td>
+                        <td>
+                          <div>Name: {rec.Name}</div>
+                          <div>Description: {rec.Description}</div>
+                          <div>Order Quantity <lightning-formatted-number value={rec.OrderQuantity}></lightning-formatted-number></div>
+                          <div>Price <lightning-formatted-number value={rec.UnitPrice}    format-style="currency" currency-code="USD"></lightning-formatted-number></div>
+                          <div>Total <lightning-formatted-number value={rec.ProductTotal} format-style="currency" currency-code="USD"></lightning-formatted-number></div>
+                        </td>
+                        <td>
+                          <div class="slds-align_absolute-center">
+                            <lightning-button
+                              variant="brand"
+                              label="Remove"
+                              onclick={handleRemoveClick}
+                              data-productid={rec.Id}
+                              >
+                            </lightning-button>
+                          </div>
+                        </td>
+                      </tr>      
+                    </template>
+                  </template>
+                </tbody>
+                <tfoot class="table-footer">
+                  <tr class="slds-line-height_reset header-row">
+                    <td>
+                      <div class="slds-truncate">Item Count <lightning-formatted-number value={cartItemCount}></lightning-formatted-number></div>
+                    </td>
+                    <td>
+                      <div class="slds-truncate">Total Quantity <lightning-formatted-number value={cartCount}></lightning-formatted-number></div>
+                    </td>
+                    <td>
+                      <div class="slds-truncate">Total Amount <lightning-formatted-number value={cartTotal} format-style="currency" currency-code="USD"></lightning-formatted-number></div>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>

@@ -1,0 +1,20 @@
+<template>
+  <div class='cat-div'>
+  <template if:true={images}>
+    <div class="carousel">
+      <lightning-carousel>
+        <template for:each={images} for:item="rec">
+          <lightning-carousel-image
+            key={rec.Id}
+            src={rec.LwcMediumImageUrl}
+            header={rec.Name}
+            description={rec.Description}
+            alternative-text={rec.ImageAltText}
+            href="javascript:void(0);">
+          </lightning-carousel-image>
+        </template>
+      </lightning-carousel>
+    </div>
+  </template> 
+  </div>
+</template>

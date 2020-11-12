@@ -1,0 +1,152 @@
+/*
+  CSS based on Copde: Type Animation by Toby Dennison - https://codepen.io/tobydennison/pen/hzlou
+*/
+
+p { 
+  color: #2A2D35; 
+  color:white;
+/*  font-family: "Helvetica", sans-serif; */
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 40em;
+}
+
+.my-pclass0 {
+  animation-name: my-p;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-timing-function: steps(80, end);
+  opacity: 0;
+}
+
+.my-pclass1 {
+  animation-name: my-p;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 240ms; /* 0.8s */
+  animation-timing-function: steps(80, end);
+  opacity: 0;
+}
+
+.my-pclass2 {
+  animation-name: my-p;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 700ms; /* 2.0s */
+  animation-timing-function: steps(80, end);
+  opacity: 0;
+}
+
+.my-pclass3 {
+  animation-name: my-p;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s; /* 3.0s */
+  animation-timing-function: steps(80, end);
+  opacity: 0;
+}
+
+.my-pclass4 {
+  animation-name: my-p;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.7s; /* 5.0s */
+  animation-timing-function: steps(80, end);
+  opacity: 0;
+}
+
+.my-pclass5 {
+  animation-name: my-p;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.2s; /* 7.0s */
+  animation-timing-function: steps(80, end);
+  opacity: 0;
+}
+
+.my-pclass6 {
+  animation-name: my-p;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.7s; /* 9.0s */
+  animation-timing-function: steps(80, end);
+  opacity: 0;
+}
+
+@keyframes my-p {
+  from { 
+    width: 0%; 
+    opacity: 0.5;
+  }
+  to {
+    width: 100%; 
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes my-p {
+  from { 
+    width: 0%; 
+    opacity: 0.5;
+  }
+  to {
+    width: 100%; 
+    opacity: 1;
+  }
+}
+
+/* Chrome and Safari Optimisation */
+@-webkit-keyframes my-p {
+  from { 
+    width: 0%; 
+    opacity: 0.5;
+  }
+  to {
+    width: 100%; 
+    opacity: 1;
+  }
+}
+
+/* Firefox Optimisation */
+@-moz-keyframes my-p {
+  from { 
+    width: 0%; 
+    opacity: 0.5;
+  }
+  to {
+    width: 100%; 
+    opacity: 1;
+  }
+}
+
+/* Opera Optimisation */
+@-o-keyframes my-p {
+  from { 
+    width: 0%; 
+    opacity: 0.5;
+  }
+  to {
+    width: 100%; 
+    opacity: 1;
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vw;
+  background: linear-gradient(165deg, #527785 0%, #7FB4C7 100%) !important;
+/*  padding: 1%; */
+  overflow: hidden;
+}

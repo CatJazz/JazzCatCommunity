@@ -1,0 +1,23 @@
+.about {
+  background-color: cornflowerblue;
+}
+
+.shopping-cart-container {
+  height: 540px;
+  overflow-y: scroll;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+:host {
+  --sds-c-accordion-heading-font-size: 2em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+a { color: blue;}

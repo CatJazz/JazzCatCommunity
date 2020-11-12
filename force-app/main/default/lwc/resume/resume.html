@@ -1,0 +1,320 @@
+<template>
+  <div class="container">
+    <div class="intro">
+      <div class="intro-hdr">
+        <h1>Graham Smith</h1>
+        <h2>Salesforce Analyst/Programmer</h2>
+        <h3>Oakland, CA</h3>
+        <h2>sfjazzcat@gmail.com</h2>
+      </div>
+      <div class="intro-content">
+        <ul>
+          <li>
+            <p>I am a Salesforce Certified Admin/Developer and am very familiar with the platform, programmng with APEX, VisualForce, Lightning Aura and LWC.</p>
+          </li>
+          <li>
+            <p>I have 20+ years experience as an Analyst/Programmer, creating database solutions to fulfill a variety of business needs.</p>
+          </li>
+          <li>
+            <p>I have a proven track-record of delivering a wide variety of mission critical apps in Salesforce (both desktop and mobile).   I have written a lot of APEX (remote procedures for visualforce, and batch, schedulable, queable classes as well as triggers).   In addition to my SOQL skills, I also bring a wealth of experience working with relational databases, and I’ve written a lot of SQL queries to fulfil complex business needs prior to my shift to SFDC.</p>
+          </li>
+          <li>
+            <p>I have often dug deep into business requirements and designed applications to meet a wide range of departmental needs for Accounting, Finance, Membership, Fulfillment, Development, Marketing, Customer Relations and others.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="education">
+      <div class="education-hdr">
+        <div></div>
+        <div><h2>Education</h2></div>
+        <div></div>
+      </div>
+      <div class="education-content">
+        <div>BSc. Computer Science</div>
+        <div>Cambridge College of Arts and Technology (Since renamed <a href="http://en.wikipedia.org/wiki/Anglia_Ruskin_University">Anglia Ruskin University</a></div>
+      </div>
+      <div class="education-content">
+        <div>Certified Salesforce Developer I</div>
+        <div>Certified Salesforce Administrator</div>
+        <div>Rotary Commercial Pilot license (CPL) and Certified Flight Instructor (CFI) rating</div>
+        <div>(Included because I originally came to America to learn to fly helicopters.  I never worked as a pilot though.)</div>
+      </div>
+    </div>
+
+    <div class="history">
+      <div class="history-hdr">
+        <div></div>
+        <div><h2>Employment History</h2></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="history-container">
+
+      <div class="job">
+        <div class="job-hdr">
+          <div></div>
+          <div><h2>Auditmate</h2></div>
+          <div><h2>Dec 2019 – May 2020</h2></div>
+        </div>
+        <div class="job-content">
+          <div class="project">
+            <div class="project-hdr">
+              <h2>Invoice OCR Automation</h2>
+            </div>
+            <div class="project-content">
+              <div>Function</div>
+              <p>I created a Salesforce backend and that accepts emails with any number of attached pdf invoices.  My code detaches them, stores them in Salesforce, sends them to a cloud OCR service that scans the pdfs and returns the data as JSON.  I then parse this content and 
+                extract and save the data that is embeded within.  This triggers an automated analysis of the invoice against Service Time Tickets that have been downloaded for the customer, and updates their dashboard.</p>
+            </div>
+            <div class="project-content">
+              <div>Technology</div>
+              <div>APEX (schedulable, batch, EmailServices, REST callouts) Lightning LWC, custom objects, custom metadata.</div>
+            </div>
+            <div class="project-content">
+              <div>Benefit</div>
+              <div>Automation of analysis of invoice pdfs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-hdr">
+          <div><h2>Some of my apps</h2></div>
+          <div><h2>SEIU United Health Workers</h2></div>
+          <div><h2>Dec 2014 – Dec 2019</h2></div>
+        </div>
+        <div class="job-content">
+          <div class="projects">
+
+            <div class="project"> 
+              <div class="project-hdr">
+                <h2>Route List</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>UHW data is structured so each one of their 250 member hospitals is an Account, with members who work at that hospital stored as Contacts of that Account.  Organizers might have several Accounts under their jurisdiction, so this allows for easy change of ownership across Accounts.  I use the Batch api to do the change.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Visualforce (Javascript), Apex controller (for javascript remoting).</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Allows power users to self-manage their teams across multiple Accounts with ease.</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-hdr">
+                <h2>Political Vote Capture/Report</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>Lets the political team easily capture votes from the CA Gov web site and match them to the politicians that have been loaded into Salesforce.  Reports votes taken at each stage of each bill they are tracking, grouped by politician.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Apex and LWC, custom objects.</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Saved time and accuracy by replacing manual data entry with automation.</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-hdr">
+                <h2>Contracts Automation</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>A schedulable Apex job that checks for contracts milestones.  Uses EmailTemplates to mail merge data from the contract and send an emails to different people (based on role) at different stages of the contract.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Schedulable and batch Apex, triggers, custom metadata, email templates, custom objects.</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Totally automated a number of manual processes relating to Contracts.  Eliminated potential of missed deadlines and enforces milestone tracking.</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-hdr">
+                <h2>Cross Match</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>SEIU bought access to 1,000,000 records of Licensensure data of medical professionals registered in CA.  I wrote a Javascript program to fuzzy match names and addresses of our contacts against this database, to find potential matches.  It can scan all 1M records in 9 minutes, and found 600 possible matches on the last Account I used.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Visualforce (Javascript), Apex controller (for javascript remoting), batch Apex, custom objects..</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Allows users to match members on external data source with fuzzy first/last name match.  Used for Campaigns to target members.</div>
+              </div>
+            </div>
+    
+            <div class="project">
+              <div class="project-hdr">
+                <h2>Pledge Up</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>A scheduleable Apex program that logs in to an affiliated 3rd party to use their REST api.  It downloads the data automatically and save them as Leads in Salesforce.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Schedulable and batch Apex.</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Automated sync of data from 3rd party.</div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-hdr">
+                <h2>Zip List</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>This app allowed users to find any of our 100,000 members based on a zip proximity search.  It used a REST callout to https://www.zipcodeapi.com.  The api returns an array of data for each zip code found and I then build a query to find members living within these areas.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Visualforce (Javascript), Apex controller (for javascript remoting).</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Provided users with a new way to target members, based on where they lived.</div>
+              </div>
+            </div>
+      
+            <div class="project">
+              <div class="project-hdr">
+                <h2>COPE Reports</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>I had to decipher a legacy sql server database that held all the member transaction data, their bi-weekly hours and pay and their political donations that go under the COPE acronym.  Guidance was minimal and I had to do a lot of discovery.  The end result produced the most accurate reports they had ever had, replacing a mishmash of manual procedures and Excel spreadsheets with a single invocation of my main stored procedure and a starting month.  It builds a 12 month view of the data, accounting for any refunds that the previous method totally ignored.  The output is fed via Dataloader into my custom object and displayed as using a Javascript table library on 3 Visualforce pages.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Sql Server stored procedures, data loader, Visual force (javascript).</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>New, highly accurate reports.  Replaced Excel hell.</div>
+              </div>            
+            </div>
+
+            <div class="project">
+              <div class="project-hdr">
+                <h2>iPad Survey App</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>This app was designed to allow any staff person the ability to collect survey data out in the field (where wifi might not be reliable).  I wrote it as a Visualforce page with just Javascript and remoting.  I used IndexDB to store 100,000 Contacts (which only took 1-3 mins) and then wrote a tabbed app that let the user easily lookup a Contact and enter a survey for them.  Responses would be saved in another table, which would be traversed to save to Salesforce when the user had wifi.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Visualforce (Javascript), Framework 7 (javascript library for iOS look and feel), Apex controller (for javascript remoting), custom objects.</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Allowed for mobile data collection within a hospital, even when user had walked out of wifi range.</div>
+              </div>
+            </div>
+    
+            <div class="project">
+              <div class="project-hdr">
+                <h2>GOTV</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div><p>This lets users update and monitor Contact data in real time!  They hated having to do the search/edit/save/return to search dance when dealing with a large number of Contacts that needed editing quickly, so my app saves the data as soon as they click a checkbox or press enter in a text field.  If they click the Start Monitoring button, then it runs a Javascript routine 3 times every minute that checks for any updates that have been made to the data and refreshes the displayed data accordingly.
+                They can filter the data simply by selection drop dropdowns.  The grid updates immediately and I generate the appropriate SOQL from the filter settings.  They can then save this setting as a ‘Universe’.
+                Counts are also updated in real-time, as soon as the data is changed in Salesforce.</p></div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Visualforce (Javascript), Apex controller (for javascript remoting), custom objects..</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>First use of real-time data updating as info was sent from the field via my mobile app. </div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-hdr">
+                <h2>GOTV Mobile</h2>
+              </div>
+              <div class="project-content">
+                <div>Function</div>
+                <div>This app provides the user with a list of available Universes that were saved in GOTV.  Upon selection, they get a list of contacts, with relevant data and three checkboxes that update Salesforce once they save.  Changes are immediately reflected in GOTV.</div>
+              </div>
+              <div class="project-content">
+                <div>Technology</div>
+                <div>Visualforce (Javascript), Framework 7 (javascript library for iOS look and feel), Apex controller (for javascript remoting), custom objects..</div>
+              </div>
+              <div class="project-content">
+                <div>Benefit</div>
+                <div>Allowed for easy data collection when user is face to face with a member.  Updates Salesforce which are shown immediately in companion desktop app.</div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-hdr">
+          <div></div>
+          <div><h2>Sierra Club</h2></div>
+          <div><h2>Dec 1997 - Dec 2013</h2></div>
+        </div>
+        <div class="job-content">
+          <div class="project">
+            <div class="project-hdr">
+              <h2>Numerous</h2>
+            </div>
+            <div class="project-content-sierra">
+              <div class="project-content-sierra2">
+                <div>SQL Solutions for Accounts, Marketing, Fulfillment, Complience, Membership, Customer Service</div>
+                <div>Technology</div>
+                <div>MS SQL Server, Powerbuilder (Sybase 3gl), Excel</div>
+              </div>
+              <div>
+                <div class="sc-text">
+                  Prior to joining UHW I spent 16 years working for Sierra Club as a Programmer/Analyst in their IT department (with 12 months on their Drupal team).   We had a reasonably complex relational database, running Sybase ASE 15.  
+                I gained extensive experience designing and creating reports, writing SQL, creating views and stored procedures, using cursors and manipulating data with TSQL in all manner of ways.  
+                I have a good understanding of how to read query execution plans and adjust the joins or add an additional index, if needed, to improve performance.
+                </div>
+                <div class="sc-text">
+                  I wrote many programs here that allowed staff to interact with an active database of 5.5 million members/supporters.  These included highly detailed and customized reports, individual and bulk updates, exports to Excel/Access or to other low-level file formats and imports of data from 3rd parties.  I designed and wrote many suites of financial reports based on our 18 million transactions in our payment table, allowing for sophisticated analysis of their campaigns.   I wrote programs and reports that allowed for breakdowns of donations at various levels of segmentation and have learned a lot about how direct marketing and response rate analysis work at the data level.  
+                I have a firm grasp of accounting principles and also wrote data extracts for upload to the FEC during election cycles for political donations and various IRS reports relating to non-profit giving.
+                </div>
+                <div class="sc-text">
+                  I’m very familiar with prospect cultivation and donor management issues and best practices to follow to ensure data integrity and accuracy.
+                  I gained a lot of experience dealing with poor quality data.  Sierra Club had an outside vendor responsible for order processing and fulfillment and another for online transactions.  These would supply us with csv files twice a week to be processed and applied to our Sybase db.  For various reasons, the two databases often created duplicated records that needed to be eliminated in Sybase.  I’ve written various de-duping programs to find and fix errors, perform address standardizations and strived to provide automated solutions wherever possible.  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</template>

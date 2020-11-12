@@ -1,0 +1,87 @@
+<template>
+  <div class="about">
+    <lightning-accordion>
+      <lightning-accordion-section name="Site" label="This Site">
+        <ul>
+          <li><p>This is a Lightning Community, created using a blank template instead of one of the pre-built options.</p></li>
+          <li><p>All pages except Shopping Cart are exposed as public pages in Community Builder.</p></li>
+          <li><p>The background is added by editing the theme header css, where I also disable default scrolling.</p></li>
+          <li><p>My custom nav bar controls the navigation between each community page.</p></li>
+          <li><p>Salesforce Cloud:  This is SVG!  I found this on <a href="https://codepen.io/shytiger/pen/gNmexL">Codepen</a> and fell in love with the technique.</p></li>
+          <li><p>Alas, there is <a href="https://github.com/salesforce/lwc/issues/2063">a bug in LWC</a> at the moment which stops this working.  Their suggested workaround did not produce the desired result, so this is in a Visual Force page, rather than a Lightning Web Component.</p></li>
+        </ul>
+      </lightning-accordion-section>
+  
+      <div>
+        <img src="https://sfjazzcat-developer-edition.na158.force.com/Demo2/s/sfsites/c/file-asset/thumbNails2?v=1"/>
+      </div>
+    
+    <div class="shopping-cart-container">
+
+      
+      <lightning-accordion-section name="ShoppingCart" label="Shopping Cart">
+        
+        <div>
+          <ul>
+            <li><p>The Shopping Cart is a fully functional implementation of an imaginary cat poster store.</p></li>
+            <li><p>This requires a sign up, as Salesforce prohibts a Lightning Community guest from seeing platform content.</p></li>
+            <li><p>The sign up page is also uses the same background technique as the home page</p></li>
+            <li><p>I initially used <a href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_message_channel">Lightning Message Service</a> to broadcast changes to input fields which the other components listen to.</p></li>          
+            <li><p>However, Salesforce don't allow LMS in communities at the moment (<a href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_message_channel_considerations">SF doc</a>), so you will notice this has been commented out in the code and replaced with <a href="https://github.com/developerforce/pubsub">pubsub</a></p></li>
+          </ul>
+        </div>
+
+        <lightning-accordion>
+          <lightning-accordion-section name="NavBar" label="NavBar">
+            <ul>
+            <li><p>The cart app uses my own tab implementation, as I found I could not update content in tabs if the user had not clicked on them when I used <a href="https://developer.salesforce.com/docs/component-library/bundle/lightning-tab/documentation">Lightning Tab</a>, due to it using a Lazy loading technique.</p></li>
+            </ul>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="Shopping" label="Shopping">
+            <ul>
+              <li>
+                <p>The items are stored as <a href="https://developer.salesforce.com/docs/atlas.en-us.228.0.object_reference.meta/object_reference/sforce_api_objects_product2.htm">Products</a>, with custom fields for images and quantities.</p>
+              </li>
+              <li>
+                <p>Entered data is stored in a <a href="https://developer.salesforce.com/docs/atlas.en-us.228.0.object_reference.meta/object_reference/sforce_api_objects_contact.htm">Contact</a>, with an <a href="https://developer.salesforce.com/docs/atlas.en-us.228.0.object_reference.meta/object_reference/sforce_api_objects_account.htm">Account</a> created for it, together with <a href="https://developer.salesforce.com/docs/atlas.en-us.228.0.object_reference.meta/object_reference/sforce_api_objects_custom_objects.htm">Custom </a></a> Cat order Master and Cat Order detail objects, which I link to Account.</p>
+              </li>
+              <li>
+                <p>The UI implements field validation on all fields, together with limits on item quantity based on Product availability.</p>
+              </li>
+              <li>
+                <p>It also enforces some basic validation on the CC fields (must be 16 digits, must have a future expiration date).</p>
+              </li>
+              <li>
+                <p>I also only allow an order to be placed once all shipping and billing details and credit card info has been entered.  </p>
+              </li>
+              <li>
+                <p>Invalidating a field on any of the tabs field removes the ability to place an order (and the checkmark in the from the tab names).</p>
+              </li>
+              <li>
+                <p>State tax rates are stored in <a href="https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_objects_intro.htm">Custom Metadata</a>, with precedence given to Billing State.</p>
+              </li>
+            </ul>
+          </lightning-accordion-section>  
+
+          <lightning-accordion-section name="Shipping" label="Shipping">
+            <ul>
+              <li><p>This uses a custom component, Address.</p></li>
+            </ul>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="Billing" label="Billing">
+            <ul>
+            <li><p>This also uses the same Address component and also a Payment component.</p></li>
+            <li><p>Placing an Order creates a Contact, an Account, a CatOrderMaster__c and CatOrder__c detail records (1 detail per item ordered).  Product2 quantities are updated and a basic confirmation email is sent to the entered address.</p></li>
+            </ul>
+          </lightning-accordion-section>
+
+        </lightning-accordion>      
+      </lightning-accordion-section>
+
+    </div>
+
+    </lightning-accordion>
+  </div>    
+</template>

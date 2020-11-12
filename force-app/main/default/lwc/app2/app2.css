@@ -1,0 +1,150 @@
+.menu-icon {
+  padding-left: 15px;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.tab-menu {
+  display: inherit;
+  color: white;
+}
+
+.tabs-container {
+  color: black;
+}
+
+.tab {
+  left: 0px;
+  top: 180px;
+  width: 99%;
+  height: 800px;
+}
+
+.active {
+  color: #EBE70F !important;
+}
+
+.order-button-red {
+  font-family: 'Salesforce Sans';
+  font-size: 15px;
+  color:red;
+  background-color: white;
+  width: 300px;
+}
+
+.order-button-blue {
+  font-family: 'Salesforce Sans';
+  font-size: 15px;
+  color:white;
+  background-color: blue;
+  width: 300px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.heading1 {
+  color: blue;
+  font-family: 'BerkshireSwash';
+  font-size: 9em;
+  min-height: 800px;
+}
+
+.heading2 {
+  display: flex;
+  color: red;
+  font-family: 'BerkshireSwash';
+  font-size: 9em;
+  min-height: 800px;
+}
+
+body {
+  margin: 200px;
+  font-family: Helvetica;
+  background: #d4f2ff;
+  color:black;
+}
+
+.crumbs {
+  text-align: center;
+}
+
+.crumbs ul {
+  list-style: none;
+  display: inline-table;
+}
+
+.crumbs ul li {
+  display: inline;
+}
+
+.crumbs ul li p {
+  display: block;
+  float: left;
+  height: 80px;
+  background: #3498db;
+  text-align: center;
+  padding: 30px 40px 0 80px;
+  position: relative;
+  margin: 0 10px 0 0;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.crumbs ul li p:after {
+  content: "";
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 40px solid #3498db;
+  position: absolute;
+  right: -40px;
+  top: 0;
+  z-index: 1;
+}
+
+.crumbs ul li p:before {
+  content: "";
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 40px solid #3470a9;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.crumbs ul li:first-child p {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.crumbs ul li:first-child p:before {
+  display: none;
+}
+
+.crumbs ul li:last-child p {
+  padding-right: 80px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.crumbs ul li:last-child p:after {
+  display: none;
+}
+
+.crumbs ul li p:hover {
+  background: blue;
+  color:white;
+}
+
+.crumbs ul li p:hover:after {
+  border-left-color:blue;
+}
+

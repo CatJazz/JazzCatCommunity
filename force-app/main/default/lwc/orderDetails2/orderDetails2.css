@@ -1,0 +1,23 @@
+.order-detail {
+  min-height: 400px;
+  background-color: white;
+}
+
+th, td {
+  border: 1px solid rgb(221, 219, 218);
+}
+
+.item {
+  width: 250px;
+}
+.product-code {
+  width: 100px;
+}
+.quantity,.price,.total {
+  text-align: right;
+  padding-right: 10px;
+  width: 100px;
+}
+.bold {
+  font-weight: bold;
+}

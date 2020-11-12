@@ -1,0 +1,46 @@
+
+.payment {
+  width: 100%;
+  background-color: white;
+  min-height: 140px;
+}
+.payment-table {
+  border: 1px solid lightgrey;
+  width: 80%;
+}
+.credit-card {
+  width: 165px;
+}
+.credit-card  > div {
+  border: 1px solid blue;
+}
+.credit-card div {
+  border: 1px solid red;
+}
+.credit-ccv-hdr,.credit-year-hdr {
+  width: 160px;
+}
+.credit-ccv {
+  width: 90px;
+}
+.credit-month, .credit-year {
+  width: 100px;  
+}
+.credit-card-hdr  {
+  width: 110px;
+  padding-left: 15px;
+}
+.credit-month-hdr {
+  padding-left: 15px;
+}
+
+.credit-card-mask {
+  width: 90px;
+  padding-left: 5px;
+}
+
+.red-text {
+  color: red;
+  padding-top: 4px;
+  font-weight: bold;
+}

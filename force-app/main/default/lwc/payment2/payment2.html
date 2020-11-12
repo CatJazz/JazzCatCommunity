@@ -1,0 +1,74 @@
+<template>
+
+  <div class="payment">
+    <header class="slds-card__header slds-grid">
+      <h2><span class="slds-text-heading_small">Payment Details</span></h2>
+    </header>
+    <div class="payment-table">
+      <table>
+        <tbody>
+      <tr>
+        <td class="credit-card-hdr">Credit Card #</td>
+        <td class="credit-card">
+          <lightning-input name="inp-credit-card" label="Credit Card #"
+            type={ccInputType}
+            variant="label-hidden"
+            value={creditCard} 
+            pattern="[0-9]{16}"
+            onchange={handleChange} 
+            minlength="16" 
+            maxlength="16" 
+            message-when-pattern-mismatch="Please enter exactly 16 digits">
+          </lightning-input>
+        </td>
+        <td class="credit-card-mask">
+          <lightning-input type="checkbox" label="Mask" name="mask-cc" onchange={handleCcMask} checked></lightning-input>
+        </td>
+         <td class="credit-ccv-hdr">CCV</td>
+         <td class="credit-ccv">
+          <lightning-input name="inp-ccv" label="CCV #" 
+            type={ccvInputType}
+            variant="label-hidden"
+            value={creditCcv}  
+            pattern="[0-9]{3}"
+            onchange={handleChange} 
+            minlength="3" 
+            maxlength="3" 
+            message-when-pattern-mismatch="Please enter exactly 3 digits">
+            </lightning-input>     
+         </td>
+         <td class="credit-card-mask">
+          <lightning-input type="checkbox" label="Mask" name="mask-ccv" onchange={handleCcvMask} checked></lightning-input>
+         </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td class="credit-month-hdr">Expire Month</td>
+        <td class="credit-month">
+          <select class="slds-select select-month" onchange={handleMonthSelect}>
+            <option value="0">Select Month</option> 
+            <template for:each={months} for:item="month">
+                <option key={month} value={month}>{month}</option>   
+            </template>
+          </select>
+        </td>
+        <td></td>
+        <td class="credit-year-hdr">Expire Year</td>
+        <td class="credit-year">
+          <select class="slds-select select-year" onchange={handleYearSelect}>
+            <option value="0">Select Year</option> 
+            <template for:each={years} for:item="year">
+                <option key={year} value={year}>{year}</option>   
+            </template>
+          </select>
+        </td>
+        <td></td>
+      </tr>
+        </tbody>
+      </table>
+      <template if:true={showDateWarning}>
+        <div class="slds-align_absolute-center red-text">Please enter a future date</div>
+      </template>
+    </div>
+  </div>
+</template>

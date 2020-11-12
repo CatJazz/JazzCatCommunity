@@ -1,0 +1,62 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false" applyBodyTag="false">
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"></meta>
+    <style>
+      body {
+        width: 100vw;
+        height: 20vw;
+        padding: 1%;
+      }
+
+      .cloud-circle {
+        width: 500px;
+        height: 275px;
+        border-radius: 50%;
+        filter: url(#filter);
+        box-shadow: 400px 400px 60px 0px rgba(255,255,255,0.7);
+        position: absolute;
+        top: -310px;
+        left: -330px;
+      }
+      .cloud-info {
+        font-size: 32px;
+        color: white;
+        height: 300px;
+        width: 1000px;
+        display: block;
+        position: absolute;
+        top: 205px;
+        left: 650px;
+      }
+
+      a {color: blue;}
+
+    </style>
+  </head>
+  <body>
+    <div class="cloud-circle"></div>
+    <div class="cloud">
+      <svg width="580" height="420">
+        <defs>
+          <filter id="filter">
+            <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
+            <feDisplacementMap in="SourceGraphic" scale="180" />
+          </filter>
+        </defs>
+        <style>
+          .sf { font: bold 30px sans-serif; }
+        </style>
+        <rect width="580" height="420" style="fill:none; stroke:none;"/>
+        <text x="200" y="235" class="sf">Salesforce</text>
+      </svg>
+    </div>
+    <div class="cloud-info">
+      <p>This is SVG!</p>
+      <ul>
+        <li><p>I found this on <a href="https://codepen.io/shytiger/pen/gNmexL">Codepen</a> and fell in love with the technique.</p></li>
+        <li><p>Alas, there is <a href="https://github.com/salesforce/lwc/issues/2063">a bug in LWC</a> at the moment which stops this working.  Their suggested workaround did not produce the desired result, so this is in a Visual Force page, rather than a Lightning Web Component.</p></li>
+      </ul>
+    </div>
+  </body>
+</apex:page>

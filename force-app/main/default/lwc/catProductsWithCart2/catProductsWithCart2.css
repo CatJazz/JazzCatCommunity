@@ -1,0 +1,54 @@
+.product-list, .cart-list {
+  height: 600px;
+}
+
+.product-image {
+  border: 1px solid rgb(221, 219, 218);
+}
+
+.row {
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid rgb(221, 219, 218);
+}
+
+tfoot {
+  background-color: rgb(221, 219, 218);
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+input[type=number] { 
+  width: 55px;
+  padding-top: 5px;
+  margin-top: 2px;
+  font-size: 14px;
+  text-align: center;
+}
+
+input[type=number]:focus {
+  outline: 1px solid rgb(27, 184, 223);
+}
+
+button {
+  width:80px;
+}
+
+.cell-controls {
+  background-color: antiquewhite;
+  height: 100%;
+  align-items: center;
+}
+
+.cell-controls:hover {
+  background-color: #E3CAB8;
+  outline: 1px solid rgb(27, 184, 223);
+}
+
+.red-box {
+  border: 1px solid red;
+}

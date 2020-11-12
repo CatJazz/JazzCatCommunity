@@ -1,0 +1,9 @@
+<template>
+  <div class="intro-container">
+    <template if:true={targetArray}>
+      <template for:each={targetArray} for:item="rec">
+        <p key={rec.paragraph} class={rec.class}>{rec.paragraph}</p>
+      </template>
+    </template>
+  </div>
+</template>

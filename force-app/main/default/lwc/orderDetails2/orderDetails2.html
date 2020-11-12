@@ -1,0 +1,68 @@
+<template>
+  <div class="order-detail">
+    <header class="slds-card__header slds-grid">
+      <h2><span class="slds-text-heading_small">Order Details</span></h2>
+    </header>
+    <fieldset class="slds-form-element slds-form-element_compound my-fieldset">
+      <div class="slds-scrollable_y product-list slds-var-m-around_xx-small">
+        <table class="slds-table slds-table_bordered product-table">
+          <thead class="table-header">
+            <tr class="slds-line-height_reset header-row bold">
+              <th class="item">
+                <div>Item</div>
+              </th>
+              <th class="product-code">
+                <div>Produt Code</div>
+              </th>
+              <th class="quantity">
+                <div>Quantity</div>
+              </th>
+              <th class="price">
+                <div>Price</div>
+              </th>
+              <th class="total">
+                <div>Total</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template if:true={cartCopy}>
+              <template for:each={cartCopy} for:item="rec">
+                <tr key={rec.Id}>
+                  <td class="item">{rec.Name}</td>
+                  <td class="product-code">{rec.ProductCode}</td>
+                  <td class="quantity"><lightning-formatted-number value={rec.OrderQuantity}></lightning-formatted-number></td>
+                  <td class="price"><lightning-formatted-number value={{rec.UnitPrice}}  format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                  <td class="total"><lightning-formatted-number value={rec.ProductTotal} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                </tr>
+              </template>
+              <template if:true={cartNotEmpty}>
+                <tr> 
+                  <td class="item">Shipping</td>
+                  <td class="product-code">SHIP-STD</td>
+                  <td class="quantity">1</td>
+                  <td class="price">$14.99</td>
+                  <td class="total">$14.99</td>
+                </tr>
+                <tr class="bold">
+                  <td colspan="4" class="bold">Sub Total</td>
+                  <td class="total"><lightning-formatted-number value={subTotal} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                </tr>
+                <template if:true={showTaxAmount}>
+                  <tr>
+                    <td colspan="4">{taxLabel}</td>
+                    <td class="total"><lightning-formatted-number value={taxAmount} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                  </tr>
+                  <tr class="bold">
+                    <td colspan="4">Grand Total</td>
+                    <td class="total"><lightning-formatted-number value={grandTotal} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                  </tr>
+                </template>
+              </template>
+            </template>
+          </tbody>
+        </table>
+      </div>          
+    </fieldset>
+  </div>
+</template>

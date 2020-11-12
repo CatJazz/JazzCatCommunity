@@ -1,0 +1,116 @@
+<template>
+  <div class="detail">
+    <header class="slds-card__header slds-grid">
+      <div class="slds-col slds-size_9-of-12">
+      <h2><span class="slds-text-heading_small">{addressType} Details</span></h2>
+      </div>
+      <template if:true={isBilling}>
+        <div class="slds-col slds-size_3-of-12">
+          <template if:true={haveShipping}>
+            <lightning-input 
+              type="toggle"  
+              label="Use Shipping Details" 
+              name="use-shipping-toggle" 
+              message-toggle-active="Yes"
+              message-toggle-inactive="No"
+              onchange={handleChange}>
+            </lightning-input>
+          </template>
+        </div>
+      </template>
+    </header>
+
+    <div>
+      <lightning-input name="inp-first-name" label="First Name" class="slds-p-left_medium"
+        variant="label-inline"
+        value={firstName} 
+        onchange={handleChange} 
+        minlength="2" 
+        maxlength="40" 
+        message-when-too-short="Please enter at least 2 characters.">
+      </lightning-input>
+
+      <lightning-input name="inp-last-name" label="Last Name"
+        variant="label-inline"
+        value={lastName}
+        onchange={handleChange}
+        minlength="2"
+        maxlength="80" 
+        message-when-too-short="Please enter at least 2 characters.">
+      </lightning-input>
+
+      <lightning-input 
+        name="inp-phone" 
+        placeholder="E.g. 123-456-7890"
+        label="Phone"
+        type="tel"  
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        variant="label-inline"
+        value={phone}
+        onchange={handleChange}
+        minlength="10"
+        message-when-pattern-mismatch="Please enter a number in format xxx-xxx-xxxx.">
+      </lightning-input>
+
+      <lightning-input 
+        name="inp-email" 
+        placeholder="E.g. xxx@yyy.zzz"
+        label="Email"
+        type="email"
+        variant="label-inline"
+        value={email}
+        onchange={handleChange}
+        minlength="7"
+        message-when-too-short="Please enter at least 7 characters.">
+      </lightning-input>
+        
+      <lightning-input 
+        name="inp-street" 
+        label="street"
+        variant="label-inline"
+        value={street}
+        onchange={handleChange}
+        minlength="4"
+        message-when-too-short="Please enter at least 4 characters.">
+      </lightning-input>
+        
+      <lightning-input 
+        name="inp-city" 
+        label="City"
+        variant="label-inline"
+        value={city}
+        onchange={handleChange}
+        minlength="3"
+        message-when-too-short="Please enter at least 4 characters.">
+      </lightning-input>
+
+      <div class="slds-grid"> 
+        <div class="slds-col slds-size_4-of-12">
+          <lightning-formatted-text value="State" ></lightning-formatted-text>
+        </div>
+        <div class="slds-col slds-col slds-size_4-of-12">
+          <template if:true={stateData}>
+            <select class="slds-select" onchange={handleSelectState}>
+              <option value="0">Select State</option> 
+              <template  for:each={stateData} for:item="rec">
+                <option key={rec.Code} value={rec.Code}>{rec.State}</option>   
+              </template>
+            </select>
+          </template>
+        </div>
+        <div class="slds-col slds-col slds-size_4-of-12">
+          <lightning-input 
+            name="inp-zip" 
+            label="Zip"
+            variant="label-inline"
+            value={zip}
+            onchange={handleChange}
+            minlength="5"
+            maxlength="10"
+            message-when-too-short="Please enter at least 5 characters.">
+          </lightning-input>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
